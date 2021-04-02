@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Container } from "react-bootstrap";
 import { SelectProductContext, UserContext } from "../../App";
 import OrderManageProducts from "../OrderManageProducts/OrderManageProducts";
 
@@ -53,13 +54,13 @@ const ManageProducts = () => {
   // };
   ///////////////////////////////////
   return (
-    <div>
-      <h1>ManageProducts</h1>
+    <Container>
+      <h1>See on your order product</h1>
 
       {products.map((pd) => (
         <OrderManageProducts pd={pd}></OrderManageProducts>
       ))}
-    </div>
+    </Container>
   );
 };
 

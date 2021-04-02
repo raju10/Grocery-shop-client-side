@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
@@ -46,7 +47,7 @@ const Admin = () => {
   };
 
   return (
-    <div>
+    <Container>
       <Link to="/admain-manages-product">
         <button className="btn btn-success">
           Edit Your adding all products
@@ -58,11 +59,19 @@ const Admin = () => {
           name="price"
           ref={register({ required: true })}
           placeholder="product price"
+          className="form-control w-50"
         />
 
         {errors.price && <span className="error"> price is required</span>}
         <br />
-        <input name="name" defaultValue="new event" ref={register} />
+        <input
+          name="name"
+          defaultValue="new event"
+          ref={register}
+          className="form-control w-50"
+        />
+        <br />
+        <small>Please add product</small>
         <br />
         <input
           name="exampleRequired"
@@ -70,9 +79,10 @@ const Admin = () => {
           onChange={handleImageUpload}
         />
         <br />
-        <input type="submit" />
+
+        <input type="submit" className="btn btn-primary" />
       </form>
-    </div>
+    </Container>
   );
 };
 
