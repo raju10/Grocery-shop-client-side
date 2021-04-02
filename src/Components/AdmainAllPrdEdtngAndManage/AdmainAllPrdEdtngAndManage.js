@@ -5,19 +5,25 @@ import { Container, ListGroup, Media, Table } from "react-bootstrap";
 
 const AdmainAllPrdEdtngAndManage = (props) => {
   const { name, price, imgUrl } = props.pd;
+  const hendelPrdDeleted = (id) => {
+    console.log("pd", id);
+    if (id) {
+      fetch(`/delete/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("deleted successfully", data);
+        });
+    }
+  };
   return (
     <div>
       <Container>
         <Table>
-          {/* <thead style={{ background: "#174431f2", color: "white" }}>
-            <tr>
-              <th>Quantity</th>
-              <th>Product</th>
-              <th>product Name</th>
-              <th>price</th>
-            </tr>
-          </thead> */}
-
           <tbody style={{ background: "#000000", color: "white" }}>
             <tr>
               <td>
@@ -30,39 +36,16 @@ const AdmainAllPrdEdtngAndManage = (props) => {
               </td>
 
               <td className="float-right">
-                <button className="btn btn-danger">
+                <button
+                  onClick={() => hendelPrdDeleted(props.pd._id)}
+                  className="btn btn-danger"
+                >
                   <FontAwesomeIcon icon={faTrashAlt} /> Deleted
                 </button>
               </td>
             </tr>
           </tbody>
         </Table>
-
-        {/* <ListGroup variant="flush">
-          <ListGroup.Item>Cras justo odio</ListGroup.Item>
-          <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-          <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-          <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
-        </ListGroup>
-        {/* 
-        <Media>
-          <img
-            width={64}
-            height={64}
-            className="ml-3"
-            src={imgUrl}
-            alt="Generic placeholder"
-          />
-          <Media.Body>
-            <h5>{name}</h5>
-            <p>{price}</p>
-          </Media.Body>
-        </Media> */}
-        {/* <div className="d-flex">
-          <h5>img</h5>
-          <h5>name</h5>
-          <h5>price</h5>
-        </div> */}
       </Container>
     </div>
   );

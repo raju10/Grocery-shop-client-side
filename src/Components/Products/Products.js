@@ -6,28 +6,18 @@ const Products = (props) => {
   const { name, imgUrl, price } = props.prd;
 
   const [selcProducts, setSelcProducts] = useContext(SelectProductContext);
-  // const [productss, setProductss] = useState({});
-  // console.log("productss", productss);
+
   const [loginUser, setLoginUser] = useContext(UserContext);
-  // console.log(loginUser);
-  //////////
-  //  const finals = {...loginUser, }
-  //////////////
-  // console.log(selcProducts);
-  // const handelAddProduct = (pd) => {
-  //   console.log("yo", pd);
-  //   setProductss(pd);
-  // };
 
   return (
     <div className="products-container col-sm-3">
       <img src={imgUrl} alt="" className="w-50" />
-      <h2>
+      <h3>
         <strong>Product-Name :</strong> {name}
-      </h2>
-      <h1>
+      </h3>
+      <h4>
         <strong> Price : </strong> {price}
-      </h1>
+      </h4>
       <Link to="/order">
         <button
           onClick={() =>
@@ -38,7 +28,6 @@ const Products = (props) => {
               price: price,
             })
           }
-          // onClick={() => handelAddProduct(props.prd)}
           className="btn btn-success"
         >
           Buy Now

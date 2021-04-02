@@ -23,8 +23,8 @@ function App() {
   return (
     <SelectProductContext.Provider value={[selcProducts, setSelcProducts]}>
       <UserContext.Provider value={[loginUser, setLoginUser]}>
-        <h3>email : {loginUser.email}</h3>
-        <p>user name : {loginUser.userName}</p>
+        {/* <h3>email : {loginUser.email}</h3>
+        <p>user name : {loginUser.userName}</p> */}
         <Router>
           <Header></Header>
           <Switch>
@@ -34,9 +34,9 @@ function App() {
             <PrivateRoute path="/order">
               <Order></Order>
             </PrivateRoute>
-            <Route path="/admin">
+            <PrivateRoute path="/admin">
               <Admin></Admin>
-            </Route>
+            </PrivateRoute>
             <Route path="/login">
               <Login></Login>
             </Route>

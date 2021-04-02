@@ -18,27 +18,6 @@ const OrderManageProducts = (props) => {
         });
     }
   };
-  //////////////////////
-  //   useEffect(() => {
-  //     // DELETE request using fetch with async/await
-  //     async function deletePost() {
-  //         await fetch('https://jsonplaceholder.typicode.com/posts/1', { method: 'DELETE' });
-  //         setStatus('Delete successful');
-  //     }
-
-  //     deletePost();
-  // }, []);
-  //////////////////
-  // function deleteProduct(id) {
-  //   fetch(`/delete/${id}`, {
-  //     method: "DELETE",
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log("deleted successfully");
-  //     });
-  //   console.log(id);
-  // }
   /////////////////////////
   const { name, email, img, userName, price } = props.pd;
   return (
@@ -72,30 +51,16 @@ const OrderManageProducts = (props) => {
               </td>
               <td>{email}</td>
               <td>
-                <button onClick={() => hendelPrdDeleted(props.pd._id)}>
+                <button
+                  onClick={() => hendelPrdDeleted(props.pd._id)}
+                  className="btn btn-danger"
+                >
                   Deleted
                 </button>
               </td>
             </tr>
-            {/* <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td colSpan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr> */}
           </tbody>
         </Table>
-
-        {/* <img src={img} alt="" className="w-25" />
-      <h1>{name}</h1>
-      <h2>{userName}</h2>
-      <p>{email}</p>
-      <p>price : {price}</p> */}
       </Container>
     </div>
   );

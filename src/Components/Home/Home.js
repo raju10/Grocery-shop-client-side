@@ -1,15 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import { UserContext } from "../../App";
-// import allProductsData from "../Data/Data.json";
+
 import Products from "../Products/Products";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
   console.log("my products", products);
-  // useEffect(() => {
-  //   setProducts(allProductsData);
-  // }, []);
+
   useEffect(() => {
     fetch("http://localhost:1000/events")
       .then((res) => res.json())
@@ -19,13 +17,15 @@ const Home = () => {
   }, []);
 
   return (
-    <Container>
-      <Row>
-        {products.map((prd) => (
-          <Products prd={prd}></Products>
-        ))}
-      </Row>
-    </Container>
+    <div style={{ background: "#80808047" }}>
+      <Container>
+        <Row>
+          {products.map((prd) => (
+            <Products prd={prd}></Products>
+          ))}
+        </Row>
+      </Container>
+    </div>
   );
 };
 

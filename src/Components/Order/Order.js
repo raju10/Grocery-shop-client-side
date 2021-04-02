@@ -31,28 +31,16 @@ const Order = () => {
   //////////////////////////////
   return (
     <div>
-      <div>
-        <nav>
-          <Link to="/manageProducts">
-            <button onClick={handelOrder} className="btn btn-primary">
-              Manage products
-            </button>
-          </Link>
-        </nav>
-      </div>
-      {/* <h1>Check Out</h1>
-      <h4>
-        <strong> Email :</strong> {loginUser.email}
-        {""} & <strong>Name : </strong>
-        {loginUser.userName}
-      </h4>
-
-      <img src={selcProducts.img} alt="" className="w-25" />
-      <h2>name : {selcProducts.name}</h2>
-      <h1>price : {selcProducts.price} </h1> */}
-
-      {/*  */}
       <Container>
+        <div>
+          <nav>
+            <Link to="/manageProducts">
+              <button onClick={handelOrder} className="btn btn-primary">
+                see on your all adding product
+              </button>
+            </Link>
+          </nav>
+        </div>
         <Table striped bordered hover>
           <thead>
             <tr>
@@ -87,12 +75,6 @@ const Order = () => {
             </tr>
           </tbody>
         </Table>
-        {/* {selcProducts !== selcProducts.price &&
-        selcProducts !== selcProducts.name ? (
-          <Link to="/home">please</Link>
-        ) : (
-          "ok"
-        )} */}
       </Container>
     </div>
   );
