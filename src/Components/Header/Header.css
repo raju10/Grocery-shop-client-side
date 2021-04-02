@@ -1,0 +1,14 @@
+.header-container nav {
+  background-color: black;
+  padding: 20px;
+  text-align: center;
+}
+.header-container nav a {
+  color: white;
+  text-decoration: none;
+  padding: 20px 30px;
+  font-size: 18px;
+}
+.header-container nav a:hover {
+  background-color: gray;
+}

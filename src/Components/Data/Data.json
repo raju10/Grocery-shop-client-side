@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Bike",
+        "imgUrl": "https://images.carandbike.com/bike-images/medium/bajaj/pulsar-150/bajaj-pulsar-150.webp?v=39",
+        "price": "$ 199"
+    },
+    {
+        "name": "Car",
+        "imgUrl": "https://auto1-homepage.prod.mp.auto1.cloud/static/optimized/blue-car-hp-left-bmw.png",
+        "price": "$ 300"
+    },
+    {
+        "name": "Bus",
+        "imgUrl": "https://www.uttaramotorsltd.com/wp-content/uploads/2015/12/LT-Bus.png", 
+        "price": "$ 100"
+    },
+    {
+        "name": "Train",       
+        "imgUrl": "https://edgedsign.com/wp-content/uploads/2020/04/Siemens-Velaro-3D-model-1024x531.jpg",
+        "price": "$ 85"
+    }
+]
